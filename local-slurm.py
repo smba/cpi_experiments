@@ -60,7 +60,7 @@ for j, binary in enumerate(BINARIES):
 			subprocess.run([
 				"timeout", 
 				"%d" % TIMEOUT, 
-				".{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
+				"{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
 		except:
 			time.sleep(3)
 
