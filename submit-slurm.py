@@ -18,7 +18,7 @@ configs = list(map(lambda s: s.replace("\n", ""), configs))
 # sync benchmark
 
 # construct tasks
-n_tasks = len(configs)
+n_tasks = len(configs - 1)
 
 # submit tasks
 # sbatch 
