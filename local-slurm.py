@@ -16,7 +16,7 @@ ARRAY_ID = int(sys.argv[4])
 # gehe zu tmp
 os.chdir("/home/stefan/")
 
-#os.system("rm -rf *")
+os.system("rm -rf *")
 
 if not "case_studies" in os.listdir("."):
 	print("hier flutet es auch")
