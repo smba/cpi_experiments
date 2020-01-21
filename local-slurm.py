@@ -13,7 +13,7 @@ ARRAY_ID = int(sys.argv[4])
 # gehe zu tmp
 os.chdir("/home/stefan/")
 
-os.system("rm -rf *")
+#os.system("rm -rf *")
 
 if not "case_studies" in os.listdir("."):
 	print("hier flutet es auch")
@@ -27,10 +27,10 @@ os.system("git pull")
 
 print(os.listdir("."))
 
+# get access to  binaries
 os.chdir("{}".format(PROJECT))
 
 print("flut flut mothafluters")
-
 
 BINARIES = os.listdir(".")
 BINARIES_ABSOLUTE = [pwd + "/" + binary for binary in BINARIES]
