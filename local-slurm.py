@@ -5,20 +5,21 @@ import sys
 print("es flutet")
 
 PROJECT = sys.argv[1]
-REPETITIONS = int(sys.args[2])
-TIMEOUT = int(sys.aregs[3])
-ARRAY_ID = int(sys.aregs[4])
+REPETITIONS = int(sys.argv[2])
+TIMEOUT = int(sys.argv[3])
+ARRAY_ID = int(sys.argv[4])
 
 # gehe zu tmp
 os.chdir("/tmp")
-if os.path.exists("case_studies"):
-	os.system("git pull")
-else:
+if not os.path.exists("case_studies"):
 	os.system("git clone https://github.com/smba/cpi.git case_studies")
 
 # Obtain binaries
-os.chdir("/case_studies/%s" % PROJECT)
-pwd = os.getcwd()
+os.chdir("case_studies/%s" % PROJECT)
+os.system("git pull")
+
+
+#pwd = os.getcwd()
 BINARIES = os.listdir(".")
 BINARIES_ABSOLUTE = [pwd + "/" + binary for binary in BINARIES]
 os.chdir("../..")
