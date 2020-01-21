@@ -9,6 +9,13 @@ REPETITIONS = int(sys.args[2])
 TIMEOUT = int(sys.aregs[3])
 ARRAY_ID = int(sys.aregs[4])
 
+# gehe zu tmp
+os.chdir("/tmp")
+if os.path.exists("case_studies"):
+	os.system("git pull")
+else:
+	os.system("git clone https://github.com/smba/cpi.git case_studies")
+
 # Obtain binaries
 os.chdir("/case_studies/%s" % PROJECT)
 pwd = os.getcwd()
