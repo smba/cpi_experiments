@@ -46,6 +46,7 @@ config_tail = config.split(" ")
 for j, binary in enumerate(BINARIES):
 	rev_index = int(binary.split("_")[0]) # revision id
 	
+	durations = []
 	for i in range(REPETITIONS): 
 		time.sleep(2)
 		start = time.time()
