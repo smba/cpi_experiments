@@ -55,8 +55,8 @@ for j, binary in enumerate(BINARIES):
 		print("timeout {} ./{}".format(TIMEOUT, BINARIES_ABSOLUTE[j]) + " ".join(config_tail))
 		try:
 			subprocess.run([
-				"timeout", 
-				"%d" % TIMEOUT, 
+				#"timeout", 
+				#"%d" % TIMEOUT, 
 				".{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
 		except:
 			time.sleep(5)
