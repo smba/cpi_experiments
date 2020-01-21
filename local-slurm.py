@@ -24,11 +24,11 @@ if not "case_studies" in os.listdir("."):
 #print(os.listdir("."))
 #print(os.getcwd())
 
+print("jojojojojo")
+
 # Obtain binaries
 os.chdir("/home/stefan/case_studies")
 os.system("git pull")
-
-print(os.listdir("."))
 
 # get access to  binaries
 os.chdir("{}".format(PROJECT))
