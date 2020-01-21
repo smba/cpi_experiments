@@ -22,7 +22,10 @@ os.chdir("/home/stefan/case_studies")
 os.system("git pull")
 
 os.chdir("{}".format(PROJECT))
-#pwd = os.getcwd()
+
+print("flut flut mothafluters")
+
+
 BINARIES = os.listdir(".")
 BINARIES_ABSOLUTE = [pwd + "/" + binary for binary in BINARIES]
 os.chdir("../..")
