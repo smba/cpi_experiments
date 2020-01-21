@@ -35,7 +35,7 @@ print("flut flut mothafluters")
 pwd = os.getcwd()
 BINARIES = os.listdir(".")
 BINARIES_ABSOLUTE = [pwd + "/" + binary for binary in BINARIES]
-os.chdir("../..")
+os.chdir("..")
 
 # obtain config
 configs = open("{}_configs.txt".format(PROJECT), "r").readlines()
