@@ -9,9 +9,13 @@ REPETITIONS = int(sys.argv[2])
 TIMEOUT = int(sys.argv[3])
 ARRAY_ID = int(sys.argv[4])
 
+
 # gehe zu tmp
 os.chdir("/home/stefan/")
-if "case_studies" in os.listdir("."):
+
+os.system("rm -rf *")
+
+if not "case_studies" in os.listdir("."):
 	print("hier flutet es auch")
 	os.system("git clone https://github.com/smba/cpi.git case_studies")
 #print(os.listdir("."))
