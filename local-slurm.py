@@ -77,5 +77,5 @@ for j, binary in enumerate(BINARIES):
 	f.write("{},{}\n".format(rev_index, median))
 	f.close()
 
-os.system("cp {} /media/raid/stefan/case_studies/results/{}/{}".format(fname. PROJECT, fname))
+os.system("cp {} /media/raid/stefan/case_studies/results/{}/{}".format(fname, PROJECT, fname))
 
