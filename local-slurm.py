@@ -10,9 +10,9 @@ TIMEOUT = int(sys.argv[3])
 ARRAY_ID = int(sys.argv[4])
 
 # gehe zu tmp
-os.chdir("/tmp")
-if not os.path.exists("/tmp/case_studies"):
-	os.system("git clone https://github.com/smba/cpi.git /tmp/case_studies")
+os.chdir("/home/stefan/")
+if not os.path.exists("case_studies"):
+	os.system("git clone https://github.com/smba/cpi.git case_studies")
 print(os.listdir("."))
 print(os.getcwd())
 
