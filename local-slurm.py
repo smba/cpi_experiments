@@ -12,7 +12,8 @@ ARRAY_ID = int(sys.argv[4])
 # gehe zu tmp
 os.chdir("/home/stefan/")
 if not "case_studies" in os.listdir("."):
-	os.system("git clone https://github.com/smba/cpi.git /home/stefan/case_studies")
+	print("hier flutet es auch")
+	os.system("git clone https://github.com/smba/cpi.git case_studies")
 print(os.listdir("."))
 print(os.getcwd())
 
