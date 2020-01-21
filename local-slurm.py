@@ -45,6 +45,9 @@ configs = open("{}_configs.txt".format(PROJECT), "r").readlines()
 config = configs[ARRAY_ID].replace("\n", "")
 config_tail = config.split(" ")
 
+fname = "perf_{}_{}.csv".format(PROJECT, ARRAY_ID)
+os.system("rm -rf {}".format(fname))
+
 for j, binary in enumerate(BINARIES):
 	rev_index = int(binary.split("_")[0]) # revision id
 	print("hier")	
@@ -53,21 +56,22 @@ for j, binary in enumerate(BINARIES):
 		time.sleep(2)
 		start = time.time()
 		#print("timeout {} ./{}".format(TIMEOUT, BINARIES_ABSOLUTE[j]) + " ".join(config_tail))
-		#try:
-		#	subprocess.run([
-		#		"timeout", 
-		#		"%d" % TIMEOUT, 
-		#		".{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
-		#except:
-		#	time.sleep(5)
-		#
+		try:
+			subprocess.run([
+				"timeout", 
+				"%d" % TIMEOUT, 
+				".{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
+		except:
+			time.sleep(3)
+
 		end=time.time()
 		duration = end - start
 		durations.append(duration)
 	   
 	print(durations)
 	median = stat.median(durations)
-	fname = "perf_{}_{}.csv".format(PROJECT, ARRAY_ID)
+	
+	#fname = "perf_{}_{}.csv".format(PROJECT, ARRAY_ID)
 	f = open(fname, "a+")
 	f.write("{},{}\n".format(rev_index, median))
 	f.close()
