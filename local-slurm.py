@@ -18,10 +18,10 @@ print(os.listdir("."))
 print(os.getcwd())
 
 # Obtain binaries
-os.chdir("/home/stefan/case_studies/%s" % PROJECT)
+os.chdir("/home/stefan/case_studies")
 os.system("git pull")
 
-
+os.chdir("{}".format(PROJECT))
 #pwd = os.getcwd()
 BINARIES = os.listdir(".")
 BINARIES_ABSOLUTE = [pwd + "/" + binary for binary in BINARIES]
