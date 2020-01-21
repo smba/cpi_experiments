@@ -56,7 +56,7 @@ for j, binary in enumerate(BINARIES):
 			subprocess.run([
 				"timeout", 
 				"%d" % TIMEOUT, 
-				".{}".format(BINARIES_ABSOLUTE[i])] + config_tail, check=True)
+				".{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
 		except:
 			time.sleep(5)
 			
@@ -64,6 +64,7 @@ for j, binary in enumerate(BINARIES):
 		duration = end - start
 		durations.append(duration)
 	   
+	print(durations)
 	median = stat.median(durations)
 	fname = "perf_{}_{}.csv".format(PROJECT, ARRAY_ID)
 	f = open(fname, "a+")
