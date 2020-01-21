@@ -53,7 +53,7 @@ for j, binary in enumerate(BINARIES):
 	print("hier")	
 	durations = []
 	for i in range(REPETITIONS): 
-		time.sleep(2)
+		#time.sleep(2)
 		start = time.time()
 		#print("timeout {} ./{}".format(TIMEOUT, BINARIES_ABSOLUTE[j]) + " ".join(config_tail))
 		try:
@@ -62,7 +62,8 @@ for j, binary in enumerate(BINARIES):
 				"%d" % TIMEOUT, 
 				"{}".format(BINARIES_ABSOLUTE[j])] + config_tail, check=True)
 		except:
-			time.sleep(3)
+			#time.sleep(3)
+			pass
 
 		end=time.time()
 		duration = end - start
