@@ -9,18 +9,20 @@ REPETITIONS = int(sys.argv[2])
 TIMEOUT = int(sys.argv[3])
 ARRAY_ID = int(sys.argv[4])
 
+HOME = "/home/stefan"
+CHOME = "/media/raid/stefan"
+
 # gehe zu tmp
-os.chdir("/home/stefan/")
+os.chdir(HOME)
 
 # mach ma sauber
 os.system("rm -rf *")
 
 if not "case_studies" in os.listdir("."):
-	print("hier flutet es auch")
 	os.system("git clone https://github.com/smba/cpi_experiments.git case_studies")
 
 # Obtain binaries
-os.chdir("/home/stefan/case_studies")
+os.chdir(HOME + "/case_studies")
 os.system("git pull")
 
 # get access to  binaries
@@ -64,5 +66,5 @@ for j, binary in enumerate(BINARIES):
 	f.write("{},{}\n".format(rev_index, median))
 	f.close()
 
-os.system("cp {} /media/raid/stefan/case_studies/results/{}/{}".format(fname, PROJECT, fname))
+os.system("cp {} {}/case_studies/results/{}/{}".format(fname, CHOME, PROJECT, fname))
 
