@@ -17,7 +17,7 @@ print(os.listdir("."))
 print(os.getcwd())
 
 # Obtain binaries
-os.chdir("case_studies/%s" % PROJECT)
+os.chdir("/home/stefan/case_studies/%s" % PROJECT)
 os.system("git pull")
 
 
