@@ -14,7 +14,7 @@ os.chdir("/tmp")
 if not os.path.exists("case_studies"):
 	os.system("git clone https://github.com/smba/cpi.git case_studies")
 
-os.getcwd()
+print(os.getcwd())
 
 # Obtain binaries
 os.chdir("case_studies/%s" % PROJECT)
