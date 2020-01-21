@@ -2,6 +2,8 @@ import subprocess
 import os
 import sys
 import time 
+import statistics as stat
+
 
 print("es flutet")
 
